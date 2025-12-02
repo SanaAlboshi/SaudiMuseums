@@ -1,0 +1,91 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Create New Account{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/sinup.css' %}">
+
+<div class="signup-body">
+
+<div class="signup-box">
+
+    <!-- Side Image -->
+    <div class="side-image"></div>
+
+    <div class="form-container">
+
+        <h2>Create a New Account</h2>
+        <p class="desc">Welcome! Please fill in the information below to create your account and start using the platform.</p>
+
+        <!-- نموذج التسجيل العادي -->
+        <form action="{% url 'account:sign_up' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Choose a unique username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>First Name</label>
+                <input type="text" name="first_name" placeholder="Enter your first name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" name="last_name" placeholder="Enter your last name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="At least 8 characters" required>
+            </div>
+
+            <div class="input-group">
+                <label>Profile Picture (Optional)</label>
+                <input type="file" name="avatar" accept="image/*">
+            </div>
+
+            <button class="submit-btn" type="submit">Create Account</button>
+        </form>
+
+        <!-- Divider -->
+        <div class="divider"><span>Or</span></div>
+
+        <!-- Google Sign-Up -->
+        <div id="g_id_onload"
+             data-client_id="661535297598-rclfsu2f3589c9ieti7ss2ap0iq86rvk.apps.googleusercontent.com"
+             data-context="signup"
+             data-ux_mode="popup"
+             data-auto_prompt="false">
+        </div>
+
+        <div class="g_id_signin"
+             data-type="standard"
+             data-shape="pill"
+             data-theme="outline"
+             data-text="signup_with"
+             data-size="medium"
+             data-logo_alignment="left">
+        </div>
+
+        <!-- Already have an account -->
+        <p class="signin-link">
+            Already have an account? <a href="{% url 'account:sign_in' %}">Sign In</a>
+        </p>
+
+    </div>
+</div>
+</div>
+
+<!-- Google Identity Services Script -->
+<script src="https://accounts.google.com/gsi/client" async></script>
+
+{% endblock %}

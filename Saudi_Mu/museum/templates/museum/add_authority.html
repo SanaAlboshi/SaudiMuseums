@@ -1,0 +1,61 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/add_authority.css' %}">
+
+<div class="authority-container">
+
+    {% if messages %}
+    <div class="msg-box">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <h2 class="authority-title">Add Your Authority</h2>
+    <p class="authority-sub">Fill in your authority information</p>
+
+    <form method="POST" enctype="multipart/form-data" class="authority-form">
+        {% csrf_token %}
+
+        <!-- نوع الهيئة -->
+        <div class="authority-group">
+            <label>Authority Type</label>
+            {{ form.type }}
+        </div>
+
+        <div class="authority-group">
+            <label>Authority Name</label>
+            {{ form.name }}
+        </div>
+
+        <div class="authority-group">
+            <label>Description</label>
+            {{ form.description }}
+        </div>
+
+        <div class="authority-group">
+            <label>Location</label>
+            {{ form.location }}
+        </div>
+
+        <div class="authority-group">
+            <label>Google Map Link</label>
+            {{ form.map_url }}
+        </div>
+
+        <div class="authority-group">
+            <label>Authority Image</label>
+            {{ form.image }}
+        </div>
+
+        <button class="authority-btn">Submit</button>
+
+    </form>
+</div>
+
+{% endblock %}

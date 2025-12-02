@@ -1,0 +1,79 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+<div class="contact-page">
+
+    <div class="contact-header">
+        <h1>Get In Touch</h1>
+        <p>We're always here to help and answer your questions.</p>
+    </div>
+
+    <div class="contact-cards">
+
+        <div class="ccard">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C6A667" viewBox="0 0 24 24"><path d="M12 0C7.588 0 4 3.588 4 8c0 5.25 8 16 8 16s8-10.75 8-16c0-4.412-3.588-8-8-8zm0 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></svg>
+            </div>
+            <h3>Address</h3>
+            <p>789 Oak Lane, Lakeside, TX 54321</p>
+        </div>
+
+        <div class="ccard">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C6A667" viewBox="0 0 24 24"><path d="M17.707 12.293l-2-2A1 1 0 0014 11v4a1 1 0 00.293.707l2 2 1.414-1.414L16.414 15H20v-2h-3.586l1.293-1.293-1.414-1.414z"/><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zm3 19a3 3 0 01-3 3H5a3 3 0 01-3-3V5a3 3 0 013-3h14a3 3 0 013 3v14z"/></svg>
+            </div>
+            <h3>Phone</h3>
+            <p>0531947792</p>
+        </div>
+
+        <div class="ccard">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C6A667" viewBox="0 0 24 24"><path d="M0 4v16h24V4H0zm22 2v.511l-10 6.25-10-6.25V6h20zM2 18V8.289l9.445 5.888a1 1 0 001.11 0L22 8.289V18H2z"/></svg>
+            </div>
+            <h3>Email</h3>
+            <p>raihanf.sami@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="contact-body">
+
+        <div class="contact-map">
+            <iframe width="100%" height="100%"
+            src="https://maps.google.com/maps?q=Bothell,%20WA&t=&z=13&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+        </div>
+
+        <form method="POST" class="contact-form">
+            {% csrf_token %}
+
+            {% if messages %}
+                {% for msg in messages %}
+                    <p class="success-msg">{{ msg }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <div class="form-grid">
+                <input type="text" name="first_name" placeholder="First Name *" required>
+                <input type="text" name="last_name" placeholder="Last Name *" required>
+            </div>
+
+            <div class="form-grid">
+                <input type="email" name="email" placeholder="Email *" required>
+                <input type="text" name="phone" placeholder="Phone">
+            </div>
+
+            <textarea name="message" placeholder="Message *" required></textarea>
+
+            <button type="submit" class="btn-send">Send Message</button>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/all_authority.css' %}">
+
+<h2 class="page-title">All Authorities</h2>
+
+<div class="card-container">
+
+    {% for a in authorities %}
+    <div class="authority-card">
+
+        <!-- صورة الهيئة -->
+        <img class="authority-img" src="{{ a.image.url }}" alt="{{ a.name }}">
+
+        <div class="authority-content">
+
+            <!-- اسم الهيئة -->
+            <h3 class="authority-name">{{ a.name }}</h3>
+
+            <!-- نوع الهيئة -->
+            <p class="authority-type">
+                <strong>Type:</strong> {{ a.type }}
+            </p>
+
+            <!-- الموقع -->
+            <p class="authority-location">
+                {{ a.location }}
+            </p>
+
+            <!-- رابط الخريطة كأيقونة فقط -->
+            {% if a.map_url %}
+            <a href="{{ a.map_url }}" target="_blank" class="map-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#C6A667" viewBox="0 0 24 24">
+                    <path d="M12 2C8.146 2 5 5.146 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.854-3.146-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z"/>
+                </svg>
+            </a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% empty %}
+    <p class="empty-msg">No Authorities Found.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

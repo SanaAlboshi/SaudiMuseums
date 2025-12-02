@@ -1,0 +1,60 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/add_authority.css' %}">
+
+<div class="authority-container">
+
+    {% if messages %}
+    <div class="msg-box">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <h2 class="authority-title">Add Museum</h2>
+    <p class="authority-sub">For Authority: {{ authority.name }}</p>
+
+    <form method="POST" enctype="multipart/form-data" class="authority-form">
+        {% csrf_token %}
+
+        <div class="authority-group">
+            <label>Museum Name</label>
+            {{ form.name }}
+        </div>
+
+        <div class="authority-group">
+            <label>Location</label>
+            {{ form.location }}
+        </div>
+
+        <div class="authority-group">
+            <label>Description</label>
+            {{ form.description }}
+        </div>
+
+        <div class="authority-group">
+            <label>Museum Image</label>
+            {{ form.image }}
+        </div>
+
+        <!-- NEW Time fields -->
+        <div class="authority-group">
+            <label>Open Time</label>
+            {{ form.open_time }}
+        </div>
+
+        <div class="authority-group">
+            <label>Close Time</label>
+            {{ form.close_time }}
+        </div>
+
+        <button class="authority-btn">Submit</button>
+
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,145 @@
+:root {
+    --bg: #F2E9D8;    
+    --card: #4A0E2E;   
+    --hover: #68163D;  
+    --gold: #C6A667;   
+    --text: #2c2c2c;
+}
+
+/* ========= Page container ========= */
+.contact-page {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Poppins", sans-serif;
+    padding: 50px 10%;
+}
+
+/* ===== Title ===== */
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--card);
+}
+
+/* ===== Cards ===== */
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.ccard {
+    width: 280px;
+    background: var(--card);
+    color: white;
+    padding: 35px;
+    border-radius: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s ease;
+    border: 2px solid var(--gold);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+}
+
+.ccard:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: var(--hover);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
+}
+
+.icon {
+    margin-bottom: 15px;
+}
+
+/* ===== Contact Content ===== */
+
+.contact-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.contact-map {
+    width: 100%;
+    height: 360px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid var(--card);
+}
+
+/* ===== Form ===== */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-grid {
+    display: flex;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    background: white;
+    color: var(--text);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #d6c7b4;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--card);
+}
+
+textarea {
+    height: 140px;
+}
+
+.btn-send {
+    margin-top: 10px;
+    background: var(--card);
+    color: white;
+    padding: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    transition: 0.3s;
+    border: 2px solid var(--gold);
+}
+
+.btn-send:hover {
+    background: var(--hover);
+    transform: scale(1.02);
+}
+
+.success-msg {
+    color: var(--card);
+    font-weight: bold;
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width: 900px){
+    .contact-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 600px){
+    .contact-cards {
+        flex-direction: column;
+    }
+}

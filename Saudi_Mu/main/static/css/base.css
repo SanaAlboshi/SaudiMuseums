@@ -1,0 +1,428 @@
+:root {
+    --bg: #3C0D29;
+    --gold: #C6A667;
+    --beige: #EEE2CC;
+}
+
+/* BODY */
+body {
+    background: var(--beige);
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* NAVBAR */
+.base-navbar {
+    background: #3C0D29;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    direction: ltr;
+}
+
+/* ------------- توزيع احترافي ---------------- */
+
+/* الآن نبدل بين اليسار واليمين */
+.base-left {
+    order: 1; /* Saudi Museum */
+    margin-left: 20px;
+}
+
+.base-center {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    gap: 25px;
+}
+
+.base-right {
+    order: 3; /* Icons */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 20px;
+}
+
+/* ----------- LOGO ----------- */
+.base-logo {
+    color: var(--gold);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ---------- LINKS ---------- */
+.base-center a {
+    text-decoration: none;
+    font-size: 17px;
+    color: var(--gold);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.base-center a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+
+/* ----------- ICONS ---------- */
+.icon-btn {
+    padding: 10px;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    background: var(--bg);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-btn svg {
+    stroke: var(--gold);
+    stroke-width: 2;
+    fill: none;
+}
+
+.icon-btn:hover {
+    background: var(--gold);
+    transform: scale(1.12);
+}
+
+.icon-btn:hover svg {
+    stroke: var(--bg);
+}
+
+/* -------- Responsive -------- */
+@media(max-width: 800px){
+    .base-center {
+        display: none;
+    }
+}
+
+@media(max-width: 500px){
+    .base-logo {
+        font-size: 22px;
+    }
+}
+
+
+
+
+/* Profile Link header*/
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.profile-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Avatar - الأهم! */
+.nav-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f2efe6;
+    display: block;
+}
+
+/* Username */
+.nav-username {
+    font-weight: 500;
+    font-size: 16px;
+    color: #f4c27f;
+    white-space: nowrap;
+}
+
+/* Icon Button */
+.icon-btn {
+    padding: 5px;
+    color: #f4c27f;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+
+
+/* ============================================
+   Google Translate Bar - Hide Completely
+   ============================================ */
+/* ============================================
+   CSS Variables
+   ============================================ */
+:root {
+    --bg: #3C0D29;
+    --gold: #C6A667;
+    --beige: #EEE2CC;
+}
+
+/* ============================================
+   Body Styles
+   ============================================ */
+body {
+    background: var(--beige);
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    top: 0 !important;
+}
+
+/* ============================================
+   Navbar Styles
+   ============================================ */
+.base-navbar {
+    background: #3C0D29;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    direction: ltr;
+}
+
+/* Left Section */
+.base-left {
+    order: 1;
+    margin-left: 20px;
+}
+
+/* Center Section */
+.base-center {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    gap: 25px;
+}
+
+/* Right Section */
+.base-right {
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 20px;
+}
+
+/* ============================================
+   Logo Styles
+   ============================================ */
+.base-logo {
+    color: var(--gold);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ============================================
+   Navigation Links
+   ============================================ */
+.base-center a {
+    text-decoration: none;
+    font-size: 17px;
+    color: var(--gold);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.base-center a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+
+/* ============================================
+   Profile Section
+   ============================================ */
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.profile-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f2efe6;
+    display: block;
+}
+
+.nav-username {
+    font-weight: 500;
+    font-size: 16px;
+    color: #f4c27f;
+    white-space: nowrap;
+}
+
+/* ============================================
+   Icon Buttons (Unified Style)
+   ============================================ */
+.icon-btn {
+    padding: 8px 12px;
+    color: #f4c27f;
+    background: none;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.icon-btn:hover {
+    background: var(--gold);
+    color: var(--bg);
+    transform: scale(1.08);
+}
+
+.icon-btn svg {
+    stroke: var(--gold);
+    stroke-width: 2;
+    fill: none;
+    transition: stroke 0.3s;
+}
+
+.icon-btn:hover svg {
+    stroke: var(--bg);
+}
+
+/* ============================================
+   Language Dropdown
+   ============================================ */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.dropdown-content button {
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+}
+
+.dropdown-content button:hover {
+    background-color: var(--gold);
+    color: white;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   Google Translate - Hide Banner
+   ============================================ */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.skiptranslate {
+    display: none !important;
+}
+
+body > .skiptranslate {
+    display: none !important;
+}
+
+iframe.skiptranslate {
+    display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media(max-width: 800px) {
+    .base-center {
+        display: none;
+    }
+}
+
+@media(max-width: 500px) {
+    .base-logo {
+        font-size: 22px;
+    }
+    
+    .base-navbar {
+        padding: 12px 20px;
+    }
+    
+    .base-left {
+        margin-left: 10px;
+    }
+    
+    .base-right {
+        margin-right: 10px;
+        gap: 10px;
+    }
+    
+    .nav-username {
+        display: none;
+    }
+}

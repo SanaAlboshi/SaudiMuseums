@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Update {{ request.user.username }}{% endblock %}
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+
+
+
+<div class="signup-box">
+
+    <div class="side-image"></div>
+
+    <div class="form-container">
+
+        <h2>Update Your Profile</h2>
+        <p class="desc">Fill in the information below to update your profile details.</p>
+
+        <form action="{% url 'account:update_user_profile' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" value="{{ request.user.email }}" required>
+            </div>
+
+            <div class="input-group">
+                <label>First Name</label>
+                <input type="text" name="first_name" value="{{ request.user.first_name }}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" name="last_name" value="{{ request.user.last_name }}" required>
+            </div>
+
+            <div class="input-group">
+                <label>About Me</label>
+                <textarea name="about">{{ request.user.profile.about }}</textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Profile Picture</label>
+                {% if request.user.profile.avatar %}
+                    <img src="{{ request.user.profile.avatar.url }}" class="rounded-3 mb-2" style="width:120px; height:120px; object-fit:cover; border:3px solid #4A0E2E;">
+                {% endif %}
+                <input type="file" name="avatar" accept="image/*">
+            </div>
+
+            <button class="submit-btn" type="submit">Update Profile</button>
+        </form>
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,146 @@
+.page-title {
+    text-align: center;
+    font-size: 30px;
+    margin: 25px 0;
+    color: var(--bg);
+}
+
+/* ================= CARDS LAYOUT ================= */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* ================= SINGLE CARD ================= */
+.authority-card {
+    width: 300px;
+    background: #fff;
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.authority-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* CONTENT AREA */
+.authority-content {
+    padding: 15px;
+}
+
+/* NAME */
+.authority-name {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bg);
+}
+
+/* TYPE */
+.authority-type {
+    margin-top: 6px;
+    font-size: 15px;
+    color: #444;
+}
+
+/* LOCATION TEXT */
+.authority-location {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #444;
+    display: flex;
+    align-items: center;
+}
+
+/* ================= MAP ICON BUTTON ================= */
+.map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.map-btn svg {
+    width: 26px;
+    height: 26px;
+    fill: var(--gold);
+}
+
+/* Hover Effect */
+.map-btn svg:hover {
+    transform: scale(1.12);
+    transition: 0.2s;
+}
+
+/* WHEN EMPTY */
+.empty-msg {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+
+    .page-title {
+        font-size: 26px;
+    }
+
+    .authority-card {
+        width: 90%;
+    }
+
+    .authority-img {
+        height: 200px;
+    }
+
+    .authority-name {
+        font-size: 20px;
+    }
+
+    .authority-type,
+    .authority-location {
+        font-size: 15px;
+    }
+
+    .map-btn svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/*Responsive*/
+
+
+@media (max-width: 480px) {
+
+    .authority-card {
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    .authority-img {
+        height: 180px;
+    }
+
+    .authority-name {
+        font-size: 20px;
+    }
+
+    .authority-type,
+    .authority-location {
+        font-size: 14px;
+    }
+
+    .map-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+}
