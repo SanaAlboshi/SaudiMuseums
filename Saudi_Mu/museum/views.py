@@ -212,10 +212,6 @@ def update_museum(request, museum_id):
 
 
 
-
-from django.shortcuts import render, get_object_or_404
-from .models import Authority, Museum
-
 def search(request):
     query = request.GET.get('q', '').strip()
 
