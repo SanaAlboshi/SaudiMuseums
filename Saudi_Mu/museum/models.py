@@ -67,10 +67,6 @@ class MuseumComment(models.Model):
 
 
 
-
-
-
-
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     museum = models.ForeignKey(Museum, on_delete=models.CASCADE)
