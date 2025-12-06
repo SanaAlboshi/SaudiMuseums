@@ -47,18 +47,18 @@
 .detail-type {
     font-size: 16px;
     font-weight: bold;
-    color: var(--gold);
+    color: black;
 }
 
 .detail-name {
     font-size: 28px;
     font-weight: 900;
-    color: var(--bg);
+    color:rgb(60, 9, 9);
 }
 
 .detail-desc {
     font-size: 15px;
-    color: #444;
+    color: #383838;
     line-height: 1.5;
 }
 
@@ -149,7 +149,7 @@
 /* description */
 .museum-desc {
     font-size: 14px;
-    color: #555;
+    color: #200707;
     margin-top: 5px;
 }
 
@@ -186,7 +186,7 @@
 
 .museum-btn.delete {
     background: transparent;
-    border-color: #ff5e5e;
+    border-color: #ae3a3a;
     color: #ff5e5e;
 }
 
@@ -371,4 +371,16 @@
     .museums-grid {
         justify-content: center;
     }
+}
+
+
+.museum-btn.booking {
+    background: var(--gold);
+    color: var(--bg);
+    font-weight: 700;
+    border: none;
+}
+
+.museum-btn.booking:hover {
+    opacity: 0.85;
 }

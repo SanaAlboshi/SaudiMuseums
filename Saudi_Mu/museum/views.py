@@ -144,6 +144,7 @@ def add_museum(request, authority_id):
 
 # هنا عدلت عليه لاجل اضافة تعليق 
 def details(request, authority_id):
+    is_authority = Authority.objects.filter(owner=request.user).exists()
 
     authority = get_object_or_404(Authority, id=authority_id)
     museums = Museum.objects.filter(authority=authority)

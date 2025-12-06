@@ -1,0 +1,177 @@
+/* ======= Background & Page Setup ======= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f8f6f2, #e8e4dc);
+    min-height: 100vh;
+}
+
+.fullpage-form {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 15%;
+    gap: 50px;
+    color: #4A0E2E;
+    /* animation محذوف */
+}
+
+/* ======= Header ======= */
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #7d1845;
+}
+
+.form-header p {
+    font-size: 18px;
+    color: #4A0E2E;
+}
+
+/* ======= Form Body ======= */
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ======= Form Groups ======= */
+.form-group-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group-custom label {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.form-group-custom label i {
+    color: #C6A667;
+}
+
+/* Inputs & Selects */
+.form-control-custom, .form-select {
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    font-size: 15px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-control-custom:focus, .form-select:focus {
+    outline: none;
+    border-color: #7a3442;
+    background: #fff;
+    box-shadow: 0 0 12px rgba(198,166,103,0.3);
+}
+
+/* File Input */
+.file-input-wrapper {
+    position: relative;
+}
+
+.file-input-custom {
+    width: 100%;
+    opacity: 0;
+    height: 50px;
+    cursor: pointer;
+}
+
+.file-input-label {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 2px dashed #C6A667;
+    border-radius: 12px;
+    background: #f8f9fa;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-input-label:hover {
+    border-color: #7d1845;
+    color: #7d1845;
+    background: #fff;
+}
+
+/* Time Row */
+.time-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Google Map Button */
+.google-map-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 15px;
+    background: #4A0E2E;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.google-map-btn:hover {
+    background: #7d1845;
+}
+
+/* Submit Button */
+.btn-submit-custom {
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #4A0E2E 0%, #7d1845 100%);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+.btn-submit-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(74,14,46,0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .fullpage-form { padding: 50px 10%; }
+    .form-header h1 { font-size: 40px; }
+}
+
+@media (max-width: 768px) {
+    .fullpage-form { padding: 40px 5%; }
+    .time-row { grid-template-columns: 1fr; }
+    .form-header h1 { font-size: 32px; }
+    .form-header p { font-size: 16px; }
+}
+/* إخفاء حقل الصورة الفعلي */
+input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    z-index: -1;
+}

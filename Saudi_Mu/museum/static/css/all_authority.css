@@ -1,0 +1,41 @@
+
+    body {
+        background-color: #f9f8f6 ; /* لون خلفية الصفحة */
+    }
+
+    .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    /* ألوان الأزرار */
+    .btn-read {
+        background-color: #4e5466;
+        color: #fff;
+    }
+    .btn-read:hover {
+        background-color: #2d3542;
+    }
+
+    .btn-update {
+        background-color: #6f7d66;
+        color: #ffffff;
+    }
+    .btn-update:hover {
+        background-color: #333a35;
+        color: #fff;
+    }
+
+    .btn-delete {
+        background-color: #755558;
+        color: #fff;
+    }
+    .btn-delete:hover {
+        background-color: #581f24;
+                color: #fff;
+
+    }
