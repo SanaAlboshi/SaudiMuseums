@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-qv3ocq!60l2iivw5$a2&@=lv+h)8q)dq@%6l3-*u7rd!g!c%8t
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["https://saudimuseums-production.up.railway.app/", "http://127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = ["https://saudimuseums-production.up.railway.app", "http://127.0.0.1"]
 
 
 
