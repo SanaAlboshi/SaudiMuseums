@@ -8,6 +8,7 @@ body {
     background: var(--beige);
     margin: 0;
     font-family: "Poppins", sans-serif;
+    
 }
 /* ================= NAVBAR ================= */
 .base-navbar {
