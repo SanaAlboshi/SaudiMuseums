@@ -8,7 +8,6 @@
 
 <link rel="stylesheet" href="{% static 'css/add_authority.css' %}">
 
-
 <div class="fullpage-form">
 
     <!-- Header -->
@@ -22,10 +21,10 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
 
-            <!-- Authority Type -->
+            <!-- Authority Type (TEXT INPUT instead of SELECT) -->
             <div class="form-group-custom">
                 <label><i class="fas fa-building"></i> Authority Type</label>
-                {{ form.type }}
+                <input type="text" name="type_name" class="form-control-custom" placeholder="Write authority type">
             </div>
 
             <!-- Authority Name -->
@@ -55,18 +54,18 @@
                 </a>
             </div>
 
-<div class="form-group-custom file-input-wrapper">
-    <label><i class="fas fa-image"></i> Authority Image</label>
-    
-    <!-- هذا هو الزر المخصص -->
-    <label class="file-input-label" for="id_image">
-        <i class="fas fa-cloud-upload-alt"></i> Choose Image
-    </label>
+            <!-- Image Upload -->
+            <div class="form-group-custom file-input-wrapper">
+                <label><i class="fas fa-image"></i> Authority Image</label>
 
-    <!-- حقل الصورة الأصلي (مخفي) -->
-    {{ form.image }}
-</div>
+                <!-- Custom upload button -->
+                <label class="file-input-label" for="id_image">
+                    <i class="fas fa-cloud-upload-alt"></i> Choose Image
+                </label>
 
+                <!-- Hidden original input -->
+                {{ form.image }}
+            </div>
 
             <!-- Submit -->
             <button type="submit" class="btn-submit-custom">
