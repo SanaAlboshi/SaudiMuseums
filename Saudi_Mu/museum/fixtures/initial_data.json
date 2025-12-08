@@ -34,7 +34,7 @@
     "owner": 26,
     "type": 6,
     "name": "ROYAL COMMISSION FOR ALULA",
-    "description": "Established in July 2017, the Royal Commission for AlUla aims to protect and develop the AlUla region, which is home to significant archaeological sites, including the UNESCO World Heritage site of Hegra (Madâin Sâlih). The commission was formed to ensure the sustainable transformation of AlUla into a major cultural and tourism destination while preserving its historical and natural significance. \r\nWikipedia",
+    "description": "Established in July 2017, the Royal Commission for AlUla aims to protect and develop the AlUla region, which is home to significant archaeological sites, including the UNESCO World Heritage site of Hegra (Madï¿½in Sï¿½lih). The commission was formed to ensure the sustainable transformation of AlUla into a major cultural and tourism destination while preserving its historical and natural significance. \r\nWikipedia",
     "image": "authority/alulla.jpeg",
     "location": "ALULA",
     "map_url": "https://www.bing.com/maps/search?FORM=HDRSC6&q=%D9%82%D9%88%D9%82%D9%84+%D9%85%D8%A7%D8%A8+%D9%85%D9%88%D9%82%D8%B9+%D8%A7%D9%84%D9%87%D9%8A%D8%A6%D8%A9+%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A%D8%A9+%D9%"
@@ -47,7 +47,7 @@
     "owner": 30,
     "type": 7,
     "name": "Royal Commission for Mecca",
-    "description": "Royal Commission for Makkah City and Holy Sites (RCMC)\r\nThe Royal Commission for Makkah is a government body established to manage and develop the city of Makkah and the Holy Sites. Its main goals are to improve services for pilgrims, enhance the quality of life for residents, develop infrastructure, support investment and urban planning, and preserve the city’s cultural and historical heritage. The commission oversees transportation, housing, public services, and large-scale development projects to ensure a safe and organized environment for visitors and residents.",
+    "description": "Royal Commission for Makkah City and Holy Sites (RCMC)\r\nThe Royal Commission for Makkah is a government body established to manage and develop the city of Makkah and the Holy Sites. Its main goals are to improve services for pilgrims, enhance the quality of life for residents, develop infrastructure, support investment and urban planning, and preserve the cityï¿½s cultural and historical heritage. The commission oversees transportation, housing, public services, and large-scale development projects to ensure a safe and organized environment for visitors and residents.",
     "image": "authority/OIP_2_5tTVSYC.webp",
     "location": "Mecca",
     "map_url": "https://www.bing.com/maps/search?FORM=HDRSC6&style=r&q=+%D8%A7%D9%84%D9%87%D9%8A%D8%A6%D8%A9+%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A%D8%A9+%D9%81%D9%8A+%D9%85%D9%83%D9%87&cp=21.411777%7E39.838913&lvl=12."
@@ -60,7 +60,7 @@
     "owner": 31,
     "type": 8,
     "name": "Royal Commission for Riyadh",
-    "description": "Royal Commission for Makkah City and Holy Sites (RCMC)\r\nThe Royal Commission for Makkah is a government body established to manage and develop the city of Makkah and the Holy Sites. Its main goals are to improve services for pilgrims, enhance the quality of life for residents, develop infrastructure, support investment and urban planning, and preserve the city’s cultural and historical heritage. The commission oversees transportation, housing, public services, and large-scale development projects to ensure a safe and organized environment for visitors and residents.",
+    "description": "Royal Commission for Makkah City and Holy Sites (RCMC)\r\nThe Royal Commission for Makkah is a government body established to manage and develop the city of Makkah and the Holy Sites. Its main goals are to improve services for pilgrims, enhance the quality of life for residents, develop infrastructure, support investment and urban planning, and preserve the cityï¿½s cultural and historical heritage. The commission oversees transportation, housing, public services, and large-scale development projects to ensure a safe and organized environment for visitors and residents.",
     "image": "authority/Riyadh.png",
     "location": "Riyadh",
     "map_url": "https://www.bing.com/maps/search?FORM=HDRSC6&q=Royal+Commission+for+Riyadh&cp=24.686860%7E46.679405&lvl=13.2&style=r"
@@ -87,7 +87,7 @@
     "name": "Quran Museum",
     "image": "museum/e73c543dc374860cd36ae5ac76ae9a0b_EUXKtgH.jpg",
     "location": "Mecca",
-    "description": "Exhibits rare Qur’anic manuscripts, historic Qur’ans",
+    "description": "Exhibits rare Quranic manuscripts, historic Qurans",
     "open_time": "10:40:00",
     "close_time": "19:42:00"
   }
