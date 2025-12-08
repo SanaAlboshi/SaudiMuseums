@@ -10,6 +10,7 @@ from django.core.paginator import Paginator # اضفت برضو هنا سطر ا
 from museum.models import Bookmark
 from .models import Museum, Booking
 
+# إضافة هيئة
 @login_required(login_url='account:sign_in')
 def add_authority(request):
     # فقط المستخدمين الذين سجلوا كهيئة يمكنهم إضافة الهيئة
@@ -21,17 +22,20 @@ def add_authority(request):
     if request.method == "POST":
         form = AuthorityForm(request.POST, request.FILES)
         if form.is_valid():
-            selected_type = form.cleaned_data["type"]
-            if Authority.objects.filter(type=selected_type).exists():
-                messages.error(request, "هذا النوع من الهيئات مستخدم مسبقًا ولا يمكن إضافته مرة أخرى.")
-                return redirect("add_authority")
+
+            # == التعديل المطلوب فقط ==
+            type_name = request.POST.get("type_name")
+            authority_type, created = AuthorityType.objects.get_or_create(
+                name=type_name.strip()
+            )
+            # ===========================
 
             authority = form.save(commit=False)
             authority.owner = request.user
+            authority.type = authority_type   # ← ربط النوع الجديد بالهيئة
             authority.save()
 
             messages.success(request, "تم إضافة الهيئة بنجاح")
-            # بعد إضافة الهيئة، إعادة التوجيه مباشرة لبروفايل الهيئة
             return redirect('account:authority_profile', authority_id=authority.id)
 
     else:
@@ -40,30 +44,33 @@ def add_authority(request):
     return render(request, 'museum/add_authority.html', {"form": form})
 
 
+
 # عرض جميع الهيئات
 
 def all_authority(request):
-    authority_type = request.GET.get("type")
+    authority_type = request.GET.get("type", "")
 
+    # فلترة الهيئات حسب النوع المختار
     if authority_type:
-          authorities_list = Authority.objects.filter(type_id=authority_type).order_by("id")
+        authorities_list = Authority.objects.filter(type_id=authority_type).order_by("id")
     else:
-         authorities_list = Authority.objects.all().order_by("id")
-
+        authorities_list = Authority.objects.all().order_by("id")
 
     # Pagination: 3 هيئات لكل صفحة
     paginator = Paginator(authorities_list, 3)
     page_number = request.GET.get('page')
     authorities = paginator.get_page(page_number)
 
+    # جلب كل أنواع الهيئات للفلتر
     types = AuthorityType.objects.all()
 
     return render(request, 'museum/all_authority.html', {
         "authorities": authorities,
         "types": types,
-        "selected": authority_type,
-        "paginator": paginator,  # لإظهار أزرار الصفحات
+        "selected": authority_type,   # مهم: لتحديد النوع المختار في الـ HTML
+        "paginator": paginator,
     })
+
 
 
 
