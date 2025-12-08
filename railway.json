@@ -4,6 +4,6 @@
         "builder": "NIXPACKS"
     },
     "deploy": {
-        "startCommand": "cd Saudi_Mu && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn Saudi_Mu.wsgi"
+        "startCommand": "cd Saudi_Mu && python manage.py migrate && python manage.py loaddata initial_data.json && python manage.py collectstatic --noinput && gunicorn Saudi_Mu.wsgi"
     }
 }
