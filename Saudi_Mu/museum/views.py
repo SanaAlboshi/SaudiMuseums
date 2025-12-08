@@ -13,35 +13,28 @@ from .models import Museum, Booking
 # إضافة هيئة
 @login_required(login_url='account:sign_in')
 def add_authority(request):
-    # فقط المستخدمين الذين سجلوا كهيئة يمكنهم إضافة الهيئة
-    profile = getattr(request.user, 'profile', None)
-    if not profile:
-        messages.error(request, "يرجى إنشاء حساب أولاً.")
-        return redirect('account:sign_up')
-
     if request.method == "POST":
         form = AuthorityForm(request.POST, request.FILES)
+
         if form.is_valid():
-
-            # == التعديل المطلوب فقط ==
-            type_name = request.POST.get("type_name")
-            authority_type, created = AuthorityType.objects.get_or_create(
-                name=type_name.strip()
-            )
-            # ===========================
-
             authority = form.save(commit=False)
             authority.owner = request.user
-            authority.type = authority_type   # ← ربط النوع الجديد بالهيئة
+
+            # ــ جلب اسم النوع من input
+            type_name = request.POST.get("type_name", "").strip()
+
+            if type_name:
+                # إنشاء النوع إذا غير موجود
+                type_obj, created = AuthorityType.objects.get_or_create(name=type_name)
+                authority.type = type_obj
+
             authority.save()
 
-            messages.success(request, "تم إضافة الهيئة بنجاح")
             return redirect('account:authority_profile', authority_id=authority.id)
-
     else:
         form = AuthorityForm()
 
-    return render(request, 'museum/add_authority.html', {"form": form})
+    return render(request, "museum/add_authority.html", {"form": form})
 
 
 
